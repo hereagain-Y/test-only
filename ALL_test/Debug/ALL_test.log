@@ -1,0 +1,14 @@
+﻿  Source.cpp
+C:\Users\jimmy\source\repos\ALL_test\ALL_test\Source.cpp(160,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\jimmy\source\repos\ALL_test\ALL_test\Source.cpp(169,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\jimmy\source\repos\ALL_test\ALL_test\Source.cpp(178,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\jimmy\source\repos\ALL_test\ALL_test\Source.cpp(189,39): warning C4101: 'to': unreferenced local variable
+C:\Users\jimmy\source\repos\ALL_test\ALL_test\Source.cpp(189,20): warning C4101: 'operation': unreferenced local variable
+C:\Users\jimmy\source\repos\ALL_test\ALL_test\Source.cpp(189,43): warning C4101: 'fro': unreferenced local variable
+C:\Users\jimmy\source\repos\ALL_test\ALL_test\Source.cpp(189,31): warning C4101: 'vertex': unreferenced local variable
+C:\Users\jimmy\source\repos\ALL_test\ALL_test\Source.cpp(191,9): warning C4101: 'arrSize': unreferenced local variable
+C:\Users\jimmy\source\repos\ALL_test\ALL_test\Source.cpp(189,48): warning C4101: 'weight': unreferenced local variable
+C:\Users\jimmy\source\repos\ALL_test\ALL_test\Source.cpp(189,56): warning C4101: 'source': unreferenced local variable
+C:\Users\jimmy\source\repos\ALL_test\ALL_test\Source.cpp(189,64): warning C4101: 'j': unreferenced local variable
+C:\Users\jimmy\source\repos\ALL_test\ALL_test\Source.cpp(189,9): warning C4101: 'noOfLines': unreferenced local variable
+  ALL_test.vcxproj -> C:\Users\jimmy\source\repos\ALL_test\Debug\ALL_test.exe
