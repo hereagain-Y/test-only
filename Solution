@@ -109,6 +109,46 @@ public:
             curr->next=l1;
         return head;
     }
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+        if(!l1 && !l2){
+            return NULL;
+        }
+        if(!l1){
+            return l2;
+        }
+        if(!l2){
+            return l1;
+        }
+        
+        int carry =0;
+        
+        ListNode* result = NULL;
+        ListNode* last = NULL ;
+        while(l1 != NULL || l2!= NULL || carry > 0){
+            int first = l1 ? l1->val : 0;
+            int second = l2 ? l2->val : 0;
+            
+            int sum = first+ second+carry;
+            int placeDigit = (sum) % 10;
+            
+            ListNode* pNew = new ListNode(placeDigit);
+            
+            carry = (sum)/10;
+            
+            if(result == NULL){
+                result = pNew;  
+            } else{
+                last -> next = pNew;
+            }
+            
+            last = pNew;
+            
+            if(l1) l1 = l1->next;
+            if(l2) l2 = l2->next;
+        }
+        return result;
+    }
+    
     int removeElement(vector<int>& nums, int val) {
         int num=0;
         int size=nums.size();
