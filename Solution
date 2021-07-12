@@ -109,6 +109,18 @@ public:
             curr->next=l1;
         return head;
     }
+    int removeElement(vector<int>& nums, int val) {
+        int num=0;
+        int size=nums.size();
+        for(auto it=nums.begin();it<nums.end();it++){
+            if(*it==val){
+                nums.erase(it);
+                it--;
+                num++;
+            }
+        }
+        return size-num;
+    }
 };
 
 
