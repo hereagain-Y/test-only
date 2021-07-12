@@ -136,6 +136,29 @@ public:
     }
     return s.substr(min_start, max_len);
     }
+    int lengthOfLongestSubstring(string s) {
+        int i=0;
+        int num=0,max=0;
+        set<char> se;
+        while(i<s.length()){
+            num=0;
+            se.clear();
+            for(int j=i;j<s.length();j++){
+                if(se.find(s[j])!=se.end()){
+                    if(num>max)
+                        max=num;
+                    break;
+                }else{
+                    se.insert(s[j]);
+                    num++;
+                }
+                if(num>max)
+                    max=num;
+            }
+            i++;
+        }
+        return max;
+    }
 };
 
 
