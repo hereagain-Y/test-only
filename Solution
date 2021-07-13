@@ -279,6 +279,36 @@ public:
         }
         return mapper[max];
     }
+    int myAtoi(string s) {
+        int i=0,sign=1;
+    while(s[i]==' ')
+        i++;
+    if(s[i]=='-')
+    {
+        sign=-1;
+        i++;
+    }
+    else if(s[i]=='+')
+    {
+        i++;
+    }
+    if(s[i]<48 || s[i]>57)
+        return 0;
+    int sum=0;
+    while(s[i]>=48 && s[i]<=57)
+    {
+        if(sum>INT_MAX/10 || (sum==INT_MAX/10 && (s[i]-48)>7))
+            return (sign*INT_MAX)+(sign==-1 ?-1 :0);
+        else       
+        sum=(sum*10)+(s[i]-48);
+        
+        i++;
+    }
+    
+   sum*=sign;
+    return sum;
+    }
+    
     int findPeakElement(vector<int>& num) {
         int low = 0, high = num.size() - 1;
         while (low < high - 1) {
