@@ -1,5 +1,5 @@
 //This file contains median difficulty problems on LeetCode
-vector<int> result;
+public: vector<int> result;
     void inorder(TreeNode* root){
         if(root==nullptr)
             return;
@@ -47,3 +47,37 @@ Example 2
 Input: nums = [2,2,2,2,2], target = 8
 Output: [[2,2,2,2]]
 */
+    bool check(vector<vector<int>> result,vector<int> target){
+        sort(target.begin(),target.end());
+        for(int i=0;i<result.size();i++){
+            sort(result[i].begin(),result[i].end());
+            if(result[i]==target)
+                return true;
+        }
+        return false;
+    }
+    vector<vector<int>> fourSum(vector<int>& nums, int target) {
+        vector<vector<int>> result;
+        vector<int> number;
+        if(nums.size()<4)
+            return result;
+        for(int i=0;i<nums.size();i++){
+            for(int j=i+1;j<nums.size();j++){
+                for(int k=j+1;k<nums.size();k++){
+                    for(int l=k+1;l<nums.size();l++){
+                        if(nums[i]+nums[j]+nums[k]+nums[l]==target){
+                            number.push_back(nums[i]);
+                            number.push_back(nums[j]);
+                            number.push_back(nums[k]);
+                            number.push_back(nums[l]);
+                            if(!check(result,number)){
+                                result.push_back(number);
+                            }
+                            number.clear();
+                        }
+                    }
+                }
+            }
+        }
+        return result;
+    }
