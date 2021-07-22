@@ -145,3 +145,17 @@ Output: [[2,2,2,2]]
         }
         return curr;
     }
+    
+    int partitionDisjoint(vector<int>& nums) {
+        vector<int> mx(nums.size()), mi(nums.size());
+        mx[0]=nums[0]; mi[nums.size()-1]=nums.back();
+        for(int i=1; i<nums.size(); i++)
+            mx[i]=max(nums[i], mx[i-1]);
+        for(int i=nums.size()-2; i>=0; i--)
+            mi[i]=min(nums[i], mi[i+1]);
+        int i;
+        for(i=0; i<nums.size()-1; i++)
+            if(mx[i]<=mi[i+1])
+                break;
+        return i+1;
+    }
