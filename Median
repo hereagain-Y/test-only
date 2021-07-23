@@ -168,3 +168,16 @@ Output: [[2,2,2,2]]
                 break;
         return i+1;
     }
+    
+    int maxArea(vector<int>& height) {
+        int l=0,r=height.size()-1,h=0,area=0;
+        while(l<r){
+            h=height[l]<height[r]?height[l]:height[r];
+            area=(r-l)*h>area?(r-l)*h:area;
+            if(height[l]<height[r])
+                l++;
+            else
+                r--;
+        }
+        return area;
+    }
