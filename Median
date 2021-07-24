@@ -181,3 +181,19 @@ Output: [[2,2,2,2]]
         }
         return area;
     }
+    
+    int maxArea(vector<int>& height) {
+        int max=0;
+        for(int i=0;i<height.size();i++){
+            for(int j=i+1;j<height.size();j++){
+                int w=j-i,h;
+                if(height[i]>height[j])
+                    h=height[j];
+                else
+                    h=height[i];
+                if(w*h>max)
+                    max=w*h;
+            }
+        }
+        return max;
+    }
