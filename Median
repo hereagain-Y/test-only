@@ -326,6 +326,7 @@ private:
 					do{ 
                         			++j; 
 					}while(nums[j] == nums[j-1] && j < k);
+					
 					do{ 
 						--k; 
 					}while(nums[k] == nums[k+1] && j < k);
