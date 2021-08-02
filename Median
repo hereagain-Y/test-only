@@ -317,14 +317,18 @@ private:
 			int j = i + 1, k = len - 1;
 			while(j < k){
 				int sum = nums[i] + nums[j] + nums[k];
-				if (sum > 0) --k;
-				else if (sum < 0) ++j;
-				else 
-				{
+				if (sum > 0) 
+					--k;
+				else if (sum < 0) 
+					++j;
+				else{
 					ret.push_back({ nums[i], nums[j], nums[k] });
 					do{ 
-                        ++j; }while(nums[j] == nums[j-1] && j < k);
-					do{ --k; }while(nums[k] == nums[k+1] && j < k);
+                        			++j; 
+					}while(nums[j] == nums[j-1] && j < k);
+					do{ 
+						--k; 
+					}while(nums[k] == nums[k+1] && j < k);
 				}
 			}
 		}
