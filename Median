@@ -335,3 +335,77 @@ private:
 		}
 		return ret;
     }
+    
+    vector<string> letterCombinations(string digits) {
+        map<char,string> mapper;
+        mapper['2']="abc";
+        mapper['3']="def";
+        mapper['4']="ghi";
+        mapper['5']="jkl";
+        mapper['6']="mno";
+        mapper['7']="pqrs";
+        mapper['8']="tuv";
+        mapper['9']="wxyz";
+        int size=digits.length();
+        vector<string> result;
+        if(size==0)
+            return result;
+        else if(size==1){
+            for(int i=0;i<mapper[digits[0]].length();i++){
+                string temp=string(1,mapper[digits[0]][i]);
+                result.push_back(temp);
+            }
+        }else if(size==2){
+            for(int i=0;i<mapper[digits[0]].length();i++){
+                for(int j=0;j<mapper[digits[1]].length();j++){
+                    string temp=string(1,mapper[digits[0]][i])+mapper[digits[1]][j];
+                    result.push_back(temp);
+                }
+            }
+        }else if(size==3){
+            for(int i=0;i<mapper[digits[0]].length();i++){
+                for(int j=0;j<mapper[digits[1]].length();j++){
+                    for(int k=0;k<mapper[digits[2]].length();k++){
+                        string temp=string(1,mapper[digits[0]][i])+mapper[digits[1]][j]+
+                            mapper[digits[2]][k];
+                        result.push_back(temp);
+                    }
+                }
+            }
+        }else if(size==4){
+            for(int i=0;i<mapper[digits[0]].length();i++){
+                for(int j=0;j<mapper[digits[1]].length();j++){
+                    for(int k=0;k<mapper[digits[2]].length();k++){
+                        for(int l=0;l<mapper[digits[3]].length();l++){
+                            string temp=string(1,mapper[digits[0]][i])+mapper[digits[1]][j]+
+                                mapper[digits[2]][k]+mapper[digits[3]][l];
+                            result.push_back(temp);
+                        }
+                    }
+                }
+            }
+        }
+        return result;
+    }
+    //another easier solution
+    const vector<string> pad = {
+        "", "", "abc", "def", "ghi", "jkl",
+        "mno", "pqrs", "tuv", "wxyz"
+    };
+    
+    vector<string> letterCombinations(string digits) {
+        if (digits.empty()) return {};
+		vector<string> result;
+        result.push_back("");
+        
+        for(auto digit: digits) {
+            vector<string> tmp;
+            for(auto candidate: pad[digit - '0']) {
+                for(auto s: result) {
+                    tmp.push_back(s + candidate);
+                }
+            }
+            result.swap(tmp);
+        }
+        return result;
+    }
