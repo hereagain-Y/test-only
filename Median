@@ -485,8 +485,6 @@ private:
         return result;
     }
     
-    <swiper-item>
-      <view class="style-roll">
-        <text>左右可滑动0</text>
-      </view>
-    </swiper-item>
+    ListNode* swapPairs(ListNode* head) {
+        
+    }
