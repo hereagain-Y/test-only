@@ -395,4 +395,8 @@ vector<int> twoSum(vector<int>& nums, int target) {
         }
         return result;
     }
+    
+    int mySqrt(int x) {
+        return (int)sqrt(x);
+    }
 
